@@ -16,16 +16,16 @@ ko:{heroTitle:"Free Palestine,<br>해방을 위해 함께 걷는다",heroText:"�
  pngSub:"온라인 팔레스타인 연대 행진",pngLine:(n,d)=>`${n} 님은 ${d} 함께 걸었습니다.`,
  date:d=>`${d.getFullYear()}년 ${d.getMonth()+1}월 ${d.getDate()}일`,
  tabs:{look:"얼굴·머리",shirt:"옷",scarf:"스카프",hold:"들고 갈 것",pin:"배지",bg:"배경"},
- g:{skin:"피부색",hair:"머리 모양",hairc:"머리색",shirt:"옷 색",scarf:"목에 두를 것",hold:"손에 들 것",slogan:"피켓 문구",pin:"가슴 배지",bg:"배경"},
+ roadTitle:"함께 걷는 사람들",roadNote:"지금까지 참여한 사람들이 모두 도로 위에 함께 서 있어요.",roadMe:"나",roadSample:"예시",g:{face:"얼굴",fur:"털 색",skin:"피부색",hair:"머리 모양",hairc:"머리색",shirt:"옷 색",scarf:"목에 두를 것",hold:"손에 들 것",slogan:"피켓 문구",pin:"가슴 배지",bg:"배경"},
  moods:{calm:"차분하게 연대해요",firm:"단호해요",sad:"마음이 아파요",angry:"분노해요",hope:"희망을 품어요",shout:"목소리를 높여요"},
- o:{hair:{short:"짧은 머리",long:"긴 머리",bun:"올림 머리",curly:"곱슬",hijab:"히잡",cap:"모자",none:"없음"},
+ o:{face:{human:"사람",dog:"강아지",cat:"고양이"},hair:{short:"짧은 머리",long:"긴 머리",bun:"올림 머리",curly:"곱슬",hijab:"히잡",cap:"모자",none:"없음"},
     scarf:{kbw:"쿠피예 (흑백)",krw:"쿠피예 (적백)",flag:"깃발 스카프",none:"없음"},
     hold:{flag:"팔레스타인 국기",rainbow:"무지개 깃발",progress:"프로그레스 프라이드",sign:"피켓",melon:"수박",olive:"올리브 가지",key:"귀환의 열쇠",none:"빈손"},
     pin:{poppy:"양귀비",melon:"수박 배지",rainbow:"무지개",leaf:"올리브 잎",none:"없음"},
     bg:{street:"거리",gbg:"경복궁",freepal:"Free Palestine",olive:"올리브 언덕",night:"촛불 밤",flag:"국기 색",none:"없음"}},
  slogans:["팔레스타인에 자유를","FREE PALESTINE","지금 당장 휴전","학살을 멈춰라","점령을 끝내라","가자에 구호를"],
  alt:(c,n,L)=>{const p=[`온라인 팔레스타인 연대 행진 참여 인증 이미지. ${n} 님의 아바타가 그려져 있다.`,`표정은 '${L.moods[c.mood]}' 마음을 나타낸다.`];
-   if(c.hair!=="none")p.push(`${L.o.hair[c.hair]}를 하고 있다.`);if(c.scarf!=="none")p.push(`목에 ${L.o.scarf[c.scarf]}를 둘렀다.`);
+   if(c.hair!=="none")p.push(`${L.o.hair[c.hair]}를 하고 있다.`);if(c.face==="dog"||c.face==="cat")p.push(`${c.face==="dog"?"강아지":"고양이"} 얼굴을 하고 있다.`);if(c.hair==="cap")p.push(`모자에는 'Make Israel Palestine Again'이라고 적혀 있다.`);if(c.scarf!=="none")p.push(`목에 ${L.o.scarf[c.scarf]}를 둘렀다.`);
    if(c.hold==="sign")p.push(`손에 '${L.slogans[c.slogan]}'라고 쓴 피켓을 들었다.`);else if(c.hold!=="none")p.push(`한 손에 ${L.o.hold[c.hold]}을(를) 높이 들었다.`);
    if(c.pin!=="none")p.push(`가슴에 ${L.o.pin[c.pin]} 배지를 달았다.`);if(c.bg!=="none")p.push(`배경은 ${L.o.bg[c.bg]}.`);return p.join(" ");},
  lang:"EN"},
@@ -41,9 +41,9 @@ en:{heroTitle:"Free Palestine,<br>we march for liberation",heroText:"An online m
  pngSub:"Online March for Palestine",pngLine:(n,d)=>`${n} marched on ${d}.`,
  date:d=>d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}),
  tabs:{look:"Face & hair",shirt:"Clothes",scarf:"Scarf",hold:"Carry",pin:"Badge",bg:"Background"},
- g:{skin:"Skin tone",hair:"Hairstyle",hairc:"Hair color",shirt:"Shirt color",scarf:"Around your neck",hold:"In your hand",slogan:"Sign text",pin:"Chest badge",bg:"Background"},
+ roadTitle:"Marching together",roadNote:"Everyone who has joined so far stands together on the road.",roadMe:"Me",roadSample:"Example",g:{face:"Face",fur:"Fur color",skin:"Skin tone",hair:"Hairstyle",hairc:"Hair color",shirt:"Shirt color",scarf:"Around your neck",hold:"In your hand",slogan:"Sign text",pin:"Chest badge",bg:"Background"},
  moods:{calm:"Calm and steady",firm:"Resolute",sad:"Heartbroken",angry:"Angry",hope:"Hopeful",shout:"Raising my voice"},
- o:{hair:{short:"Short",long:"Long",bun:"Bun",curly:"Curly",hijab:"Hijab",cap:"Cap",none:"None"},
+ o:{face:{human:"Human",dog:"Dog",cat:"Cat"},hair:{short:"Short",long:"Long",bun:"Bun",curly:"Curly",hijab:"Hijab",cap:"Cap",none:"None"},
     scarf:{kbw:"Keffiyeh (black)",krw:"Keffiyeh (red)",flag:"Flag scarf",none:"None"},
     hold:{flag:"Palestinian flag",rainbow:"Rainbow flag",progress:"Progress Pride flag",sign:"Sign",melon:"Watermelon",olive:"Olive branch",key:"Key of return",none:"Nothing"},
     pin:{poppy:"Poppy",melon:"Watermelon",rainbow:"Rainbow",leaf:"Olive leaf",none:"None"},
@@ -51,7 +51,7 @@ en:{heroTitle:"Free Palestine,<br>we march for liberation",heroText:"An online m
  slogans:["FREEDOM FOR PALESTINE","FREE PALESTINE","CEASEFIRE NOW","STOP THE GENOCIDE","END THE OCCUPATION","AID FOR GAZA"],
  alt:(c,n,L)=>{const p=[`Proof-of-participation image from the Online March for Palestine, showing ${n}'s avatar.`,`The expression reads "${L.moods[c.mood].toLowerCase()}".`];
    if(c.hair!=="none")p.push(`${L.o.hair[c.hair]} hair${c.hair==="hijab"||c.hair==="cap"?" covering":""}.`.replace("Hijab hair covering","Wearing a hijab").replace("Cap hair covering","Wearing a cap"));
-   if(c.scarf!=="none")p.push(`A ${L.o.scarf[c.scarf].toLowerCase()} around the neck.`);
+   if(c.face==="dog"||c.face==="cat")p.push(`The avatar has a ${c.face} face.`);if(c.hair==="cap")p.push(`The cap reads "Make Israel Palestine Again".`);if(c.scarf!=="none")p.push(`A ${L.o.scarf[c.scarf].toLowerCase()} around the neck.`);
    if(c.hold==="sign")p.push(`Holding a sign that reads "${L.slogans[c.slogan]}".`);else if(c.hold!=="none")p.push(`Holding up a ${L.o.hold[c.hold].toLowerCase()}.`);
    if(c.pin!=="none")p.push(`A ${L.o.pin[c.pin].toLowerCase()} badge on the chest.`);if(c.bg!=="none")p.push(`Background: ${L.o.bg[c.bg]}.`);return p.join(" ");},
  lang:"한국어"}
@@ -62,12 +62,13 @@ let L=T[lang];
 
 /* ---------- options ---------- */
 const MOODK=["calm","firm","sad","angry","hope","shout"];
+const FUR=["#f7f3ea","#d9b382","#9a6a3a","#e0893b","#2e2b29"];
 const SKIN=["#F6D7B8","#E7B48C","#C98E62","#9C6440","#6B4128"];
 const HAIRC=["#1c1714","#4a2f22","#8a5a34","#c9a46a","#9a9690"];
 const SHIRT=["#141312","#F3EEE4","#0E7A3E","#C8102E","#3d5a80","#7a6a55"];
 const KEYS={hair:["short","long","bun","curly","hijab","cap","none"],scarf:["kbw","krw","flag","none"],hold:["flag","rainbow","progress","sign","melon","olive","key","none"],pin:["poppy","melon","rainbow","leaf","none"],bg:["street","gbg","freepal","olive","night","flag","none"]};
 const RAINBOW=["#E40303","#FF8C00","#FFED00","#008026","#004DFF","#750787"];
-const DEFAULT={mood:"calm",skin:1,hair:"short",hairc:0,shirt:0,scarf:"kbw",hold:"flag",pin:"poppy",bg:"street",slogan:0};
+const DEFAULT={face:"human",mood:"calm",skin:1,hair:"short",hairc:0,shirt:0,scarf:"kbw",hold:"flag",pin:"poppy",bg:"street",slogan:0};
 let st={nick:"",...DEFAULT};
 try{const s=JSON.parse(localStorage.getItem("pm_av")||"null");if(s&&typeof s==="object")st={...st,...s};}catch(e){}
 if(st.pin==="dove")st.pin="rainbow";
@@ -94,7 +95,7 @@ function gate(){ // Gwanghwamun-style gate of Gyeongbokgung
 }
 function avatarSVG(c,uid,lng){
   uid=uid||"a";const LL=T[lng||lang];
-  const skin=SKIN[c.skin]||SKIN[1], hc=HAIRC[c.hairc]||HAIRC[0], sh=SHIRT[c.shirt]||SHIRT[0];
+  const pet=c.face==="dog"||c.face==="cat";const hr=pet&&!["cap","none"].includes(c.hair)?"none":c.hair;const skin=(pet?FUR:SKIN)[c.skin]||SKIN[1], hc=HAIRC[c.hairc]||HAIRC[0], sh=SHIRT[c.shirt]||SHIRT[0];
   const P=[],H=[]; // H: head layers shifted down (shorter neck)
   const defs=`<defs>
    <pattern id="kf${uid}" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -114,9 +115,9 @@ function avatarSVG(c,uid,lng){
   const hj=sh===SHIRT[0]?"#0E7A3E":"#141312";
   // back hair (shifted with head)
   const back=[];
-  if(c.hair==="long")back.push(`<path d="M68 150Q62 88 130 84Q198 88 192 150L200 238Q166 222 130 222Q94 222 60 238Z" fill="${hc}"/>`);
-  if(c.hair==="curly")back.push([[78,120],[90,92],[112,78],[140,76],[166,86],[182,110],[186,140],[74,146]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="20" fill="${hc}"/>`).join(""));
-  if(c.hair==="hijab")back.push(`<path d="M70 156Q64 84 130 82Q196 84 190 156L198 226Q130 246 62 226Z" fill="${hj}"/>`);
+  if(hr==="long")back.push(`<path d="M68 150Q62 88 130 84Q198 88 192 150L200 238Q166 222 130 222Q94 222 60 238Z" fill="${hc}"/>`);
+  if(hr==="curly")back.push([[78,120],[90,92],[112,78],[140,76],[166,86],[182,110],[186,140],[74,146]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="20" fill="${hc}"/>`).join(""));
+  if(hr==="hijab")back.push(`<path d="M70 156Q64 84 130 82Q196 84 190 156L198 226Q130 246 62 226Z" fill="${hj}"/>`);
   P.push(`<g transform="translate(0 12)">${back.join("")}</g>`);
   // body + short neck
   P.push(`<path d="M52 320Q50 228 130 222Q210 228 208 320Z" fill="${sh}" stroke="${sh===SHIRT[1]?"#cfc6b6":"none"}" stroke-width="2"/>`);
@@ -124,8 +125,8 @@ function avatarSVG(c,uid,lng){
   const holding=c.hold!=="none";
   if(holding)P.push(`<path d="M190 250Q214 214 222 170" fill="none" stroke="${sh}" stroke-width="30" stroke-linecap="round"/>`);
   // head
-  H.push(`<ellipse cx="130" cy="146" rx="46" ry="52" fill="${skin}"/>`);
-  H.push(`<ellipse cx="84" cy="150" rx="7" ry="11" fill="${skin}"/><ellipse cx="176" cy="150" rx="7" ry="11" fill="${skin}"/>`);
+  if(c.face==="cat")H.push(`<path d="M74 130L80 82L116 114Z M186 130L180 82L144 114Z" fill="${skin}"/><path d="M83 118L87 94L106 112Z M177 118L173 94L154 112Z" fill="#e8a5ae"/>`);H.push(pet?`<ellipse cx="130" cy="150" rx="70" ry="44" fill="${skin}"/>`:`<ellipse cx="130" cy="146" rx="46" ry="52" fill="${skin}"/>`);
+  if(!pet)H.push(`<ellipse cx="84" cy="150" rx="7" ry="11" fill="${skin}"/><ellipse cx="176" cy="150" rx="7" ry="11" fill="${skin}"/>`);if(c.face==="dog")H.push(`<ellipse cx="130" cy="176" rx="24" ry="16" fill="#fff" opacity=".4"/>`);
   const ink="#2a1d16";
   H.push({
     calm:`<path d="M106 140q6-5 12 0M142 140q6-5 12 0" stroke="${ink}" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M118 170q12 9 24 0" stroke="${ink}" stroke-width="3.2" fill="none" stroke-linecap="round"/>`,
@@ -134,13 +135,13 @@ function avatarSVG(c,uid,lng){
     angry:`<path d="M100 124l20 9M160 124l-20 9" stroke="${ink}" stroke-width="4" stroke-linecap="round"/><circle cx="112" cy="145" r="4.5" fill="${ink}"/><circle cx="148" cy="145" r="4.5" fill="${ink}"/><path d="M116 176q14-8 28 0" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`,
     hope:`<circle cx="112" cy="142" r="6" fill="${ink}"/><circle cx="148" cy="142" r="6" fill="${ink}"/><circle cx="114" cy="140" r="2" fill="#fff"/><circle cx="150" cy="140" r="2" fill="#fff"/><ellipse cx="100" cy="160" rx="8" ry="5" fill="#e98a7a" opacity=".5"/><ellipse cx="160" cy="160" rx="8" ry="5" fill="#e98a7a" opacity=".5"/><path d="M116 167q14 14 28 0" stroke="${ink}" stroke-width="3.2" fill="none" stroke-linecap="round"/>`,
     shout:`<path d="M102 127l18 6M158 127l-18 6" stroke="${ink}" stroke-width="3.6" stroke-linecap="round"/><circle cx="112" cy="144" r="4.5" fill="${ink}"/><circle cx="148" cy="144" r="4.5" fill="${ink}"/><ellipse cx="130" cy="174" rx="12" ry="10" fill="${ink}"/><ellipse cx="130" cy="178" rx="7" ry="4" fill="#c4505a"/>`
-  }[c.mood]||"");
+  }[c.mood]||"");if(c.face==="dog")H.push(`<path d="M68 124Q44 162 56 204Q74 196 80 150Z M192 124Q216 162 204 204Q186 196 180 150Z" fill="${skin}"/><path d="M68 124Q44 162 56 204Q74 196 80 150Z M192 124Q216 162 204 204Q186 196 180 150Z" fill="#000" opacity=".22"/><ellipse cx="130" cy="166" rx="8" ry="5.5" fill="#141312"/>`);if(c.face==="cat")H.push(`<path d="M124 164h12l-6 6Z" fill="#e06b78"/><path d="M104 168l-32-6M104 175l-32 2M156 168l32-6M156 175l32 2" stroke="${c.skin===4?"#cfc6b6":"#141312"}" stroke-width="2" stroke-linecap="round"/>`);
   const fringe=`<path d="M82 146Q78 92 130 90Q182 92 178 146Q170 112 130 110Q92 112 82 146Z" fill="${hc}"/>`;
-  if(c.hair==="short"||c.hair==="long")H.push(fringe);
-  if(c.hair==="bun")H.push(fringe+`<circle cx="130" cy="84" r="20" fill="${hc}"/>`);
-  if(c.hair==="curly")H.push([[96,104],[118,94],[144,94],[166,106]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="14" fill="${hc}"/>`).join(""));
-  if(c.hair==="cap")H.push(fringe+`<path d="M82 124Q84 86 130 84Q176 86 178 124Z" fill="#C8102E"/><path d="M150 122Q186 118 200 128Q176 132 150 130Z" fill="#9b0c22"/>`);
-  if(c.hair==="hijab")H.push(`<path fill-rule="evenodd" fill="${hj}" d="M74 150Q70 86 130 84Q190 86 186 150Q186 214 130 216Q74 214 74 150ZM130 100C100 100 90 124 90 148C90 182 108 200 130 200C152 200 170 182 170 148C170 124 160 100 130 100Z"/>`);
+  if(hr==="short"||hr==="long")H.push(fringe);
+  if(hr==="bun")H.push(fringe+`<circle cx="130" cy="84" r="20" fill="${hc}"/>`);
+  if(hr==="curly")H.push([[96,104],[118,94],[144,94],[166,106]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="14" fill="${hc}"/>`).join(""));
+  if(hr==="cap")H.push((pet?"":fringe)+`<path d="M82 124Q84 86 130 84Q176 86 178 124Z" fill="#C8102E"/><path d="M150 122Q186 118 200 128Q176 132 150 130Z" fill="#9b0c22"/><g font-family="Arial,Helvetica,sans-serif" font-weight="700" fill="#fff" text-anchor="middle"><text x="130" y="103" font-size="8.4">MAKE ISRAEL</text><text x="130" y="114" font-size="8.4">PALESTINE AGAIN</text></g>`);
+  if(hr==="hijab")H.push(`<path fill-rule="evenodd" fill="${hj}" d="M74 150Q70 86 130 84Q190 86 186 150Q186 214 130 216Q74 214 74 150ZM130 100C100 100 90 124 90 148C90 182 108 200 130 200C152 200 170 182 170 148C170 124 160 100 130 100Z"/>`);
   P.push(`<g transform="translate(0 12)">${H.join("")}</g>`);
   // scarf
   if(c.scarf!=="none"){
@@ -230,7 +231,7 @@ function renderTabs(){
 }
 function renderPanel(){
   const p=$("#panel");p.innerHTML="";
-  if(tab==="look"){p.appendChild(swatches("skin",SKIN));p.appendChild(optChips("hair"));if(st.hair!=="hijab"&&st.hair!=="none")p.appendChild(swatches("hairc",HAIRC));}
+  if(tab==="look"){const pet=st.face==="dog"||st.face==="cat";p.appendChild(chips("face",[["human",L.o.face.human],["dog",L.o.face.dog],["cat",L.o.face.cat]],st.face||"human",v=>{if(v!=="human"&&!["cap","none"].includes(st.hair))st.hair="none";if(v==="cat")st.skin=0;setK("face",v);}));const sw=swatches("skin",pet?FUR:SKIN);if(pet)sw.querySelector("h3").textContent=L.g.fur;p.appendChild(sw);p.appendChild(pet?chips("hair",[["none",L.o.hair.none],["cap",L.o.hair.cap]],st.hair,v=>setK("hair",v)):optChips("hair"));if(!pet&&st.hair!=="hijab"&&st.hair!=="none")p.appendChild(swatches("hairc",HAIRC));}
   if(tab==="shirt")p.appendChild(swatches("shirt",SHIRT));
   if(tab==="scarf")p.appendChild(optChips("scarf"));
   if(tab==="hold"){p.appendChild(optChips("hold"));if(st.hold==="sign")p.appendChild(chips("slogan",L.slogans.map((s,i)=>[i,s]),st.slogan,v=>setK("slogan",v)));}
@@ -238,24 +239,79 @@ function renderPanel(){
   if(tab==="bg")p.appendChild(optChips("bg"));
 }
 const rnd=n=>Math.floor(Math.random()*n), pick=a=>a[rnd(a.length)];
-$("#rand").onclick=()=>{Object.assign(st,{skin:rnd(SKIN.length),hairc:rnd(HAIRC.length),shirt:rnd(SHIRT.length),hair:pick(KEYS.hair),scarf:pick(KEYS.scarf),hold:pick(KEYS.hold.filter(k=>k!=="none")),pin:pick(KEYS.pin),bg:pick(KEYS.bg),slogan:rnd(6)});persist();renderStage();renderPanel();};
+$("#rand").onclick=()=>{Object.assign(st,{skin:rnd(SKIN.length),hairc:rnd(HAIRC.length),shirt:rnd(SHIRT.length),hair:pick(KEYS.hair),scarf:pick(KEYS.scarf),hold:pick(KEYS.hold.filter(k=>k!=="none")),pin:pick(KEYS.pin),bg:pick(KEYS.bg),slogan:rnd(6)});if((st.face==="dog"||st.face==="cat")&&!["cap","none"].includes(st.hair))st.hair=pick(["cap","none"]);persist();renderStage();renderPanel();};
 $("#reset").onclick=()=>{Object.assign(st,DEFAULT,{mood:st.mood});persist();renderStage();renderPanel();};
 
 /* ---------- march (shared db) ---------- */
 let db=null,uid=null,marchers=[],loaded=false;
-const cfgOf=d=>({mood:d.mood,skin:d.skin,hair:d.hair,hairc:d.hairc,shirt:d.shirt,scarf:d.scarf,hold:d.hold,pin:d.pin==="dove"?"rainbow":d.pin,bg:"none",slogan:d.slogan});
+const cfgOf=d=>({face:d.face||"human",mood:d.mood,skin:d.skin,hair:d.hair,hairc:d.hairc,shirt:d.shirt,scarf:d.scarf,hold:d.hold,pin:d.pin==="dove"?"rainbow":d.pin,bg:"none",slogan:d.slogan});
 const SAMPLE=[{...DEFAULT,bg:"none"},{...DEFAULT,hair:"hijab",shirt:3,hold:"sign",slogan:1,mood:"firm",scarf:"none",bg:"none"},
   {...DEFAULT,hair:"long",hairc:1,skin:3,hold:"melon",scarf:"krw",mood:"hope",bg:"none"},{...DEFAULT,hair:"cap",skin:4,shirt:2,hold:"progress",pin:"rainbow",mood:"shout",bg:"none"},
   {...DEFAULT,hair:"curly",hairc:2,skin:2,shirt:1,hold:"olive",scarf:"flag",mood:"sad",bg:"none"},{...DEFAULT,hair:"bun",skin:0,shirt:4,hold:"key",mood:"angry",bg:"none"}];
 let seed=7;const srnd=n=>{seed=(seed*16807)%2147483647;return seed%n;};
 const VARIETY=Array.from({length:18},()=>({mood:MOODK[srnd(6)],skin:srnd(SKIN.length),hair:KEYS.hair[srnd(6)],hairc:srnd(HAIRC.length),shirt:srnd(SHIRT.length),scarf:KEYS.scarf[srnd(4)],hold:KEYS.hold[srnd(7)],pin:KEYS.pin[srnd(5)],bg:"none",slogan:srnd(6)}));
+
+/* ---------- companion animals in the march ---------- */
+const PETS=[{k:"dog",s:"shaggy",fur:"#f7f3ea",acc:"kbw"},{k:"cat",s:"tabby",fur:"#e0893b",acc:"flag"},{k:"dog",s:"short",fur:"#9a6a3a",acc:"krw"},
+  {k:"cat",s:"plain",fur:"#2e2b29",acc:"kbw"},{k:"dog",s:"short",fur:"#d9b382",acc:"flag"},{k:"cat",s:"calico",fur:"#f4f0e7",acc:"krw"}];
+function petSVG(p,uid){
+  const ink="#141312",sw=`stroke="${ink}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"`;
+  const defs=`<defs><pattern id="pk${uid}" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#f5f1e8"/><path d="M0 0H9M0 0V9" stroke="${p.acc==="krw"?"#b5121b":"#141312"}" stroke-width="2.2"/></pattern></defs>`;
+  const band=p.acc==="flag"
+    ?`<path d="M104 236H176L140 270Z" fill="#0E7A3E" ${sw}/><path d="M110 240H170L162 247H118Z" fill="#F3EEE4"/><path d="M104 236L124 236L114 250Z" fill="#C8102E"/>`
+    :`<path d="M104 236H176L140 270Z" fill="url(#pk${uid})" ${sw}/>`;
+  const P=[];
+  if(p.k==="dog"){
+    if(p.s==="shaggy"){
+      P.push(`<path d="M206 300q26-6 30-44M214 306q24-2 32-30" fill="none" ${sw}/>`);
+      P.push(`<path d="M82 320Q78 238 140 232Q202 238 198 320Z" fill="${p.fur}" ${sw}/>`);
+      P.push(`<path d="M98 270v34M116 262v40M164 262v40M182 270v34" stroke="${ink}" stroke-width="2.5" stroke-linecap="round"/>`);
+      P.push(`<path d="M84 204Q82 140 140 136Q198 140 196 204Q198 250 140 252Q82 250 84 204Z" fill="${p.fur}" ${sw}/>`);
+      P.push(`<path d="M90 186q-8 42 4 76M190 186q8 42-4 76M104 150v24M118 144v26M132 142v26M148 142v26M162 144v26M176 150v24" stroke="${ink}" stroke-width="2.6" fill="none" stroke-linecap="round"/>`);
+      P.push(`<g stroke="${ink}" stroke-width="2.6" stroke-linecap="round">${[-70,-50,-30,-10,10,30,50,70].map(a=>{const r=a*Math.PI/180;return `<path d="M140 132l${(Math.sin(r)*24).toFixed(1)} ${(-Math.cos(r)*24).toFixed(1)}"/>`;}).join("")}</g><ellipse cx="140" cy="134" rx="9" ry="5" fill="#C8102E"/>`);
+      P.push(`<path d="M112 196q8-3 16 0M152 196q8-3 16 0" fill="none" ${sw}/><ellipse cx="140" cy="212" rx="7" ry="5" fill="${ink}"/><path d="M140 217v6M131 228q9-5 18 0" fill="none" stroke="${ink}" stroke-width="3" stroke-linecap="round"/>`);
+    }else{
+      P.push(`<path d="M200 292q30-14 26-48" fill="none" stroke="${p.fur}" stroke-width="12" stroke-linecap="round"/><path d="M200 292q30-14 26-48" fill="none" stroke="${ink}" stroke-width="2" stroke-linecap="round" opacity=".35"/>`);
+      P.push(`<path d="M84 320Q80 240 140 234Q200 240 196 320Z" fill="${p.fur}" ${sw}/>`);
+      P.push(`<circle cx="140" cy="196" r="50" fill="${p.fur}" ${sw}/>`);
+      P.push(`<path d="M96 168Q76 196 90 236Q104 226 106 190Z M184 168Q204 196 190 236Q176 226 174 190Z" fill="#5b3b20" ${sw}/>`);
+      P.push(`<ellipse cx="140" cy="214" rx="24" ry="18" fill="#f3e6d0"/><circle cx="122" cy="190" r="5" fill="${ink}"/><circle cx="158" cy="190" r="5" fill="${ink}"/><ellipse cx="140" cy="206" rx="8" ry="6" fill="${ink}"/><path d="M130 220q10 8 20 0" fill="none" stroke="${ink}" stroke-width="3" stroke-linecap="round"/><path d="M140 222q0 12 6 14" fill="#e06b78" stroke="none"/>`);
+    }
+    P.push(`<ellipse cx="116" cy="312" rx="16" ry="10" fill="${p.fur}" ${sw}/><ellipse cx="164" cy="312" rx="16" ry="10" fill="${p.fur}" ${sw}/>`);
+  }else{
+    P.push(`<path d="M190 304q46-6 36-70q-4-18 8-20" fill="none" stroke="${p.fur}" stroke-width="13" stroke-linecap="round"/>`);
+    P.push(`<path d="M92 320Q90 244 140 238Q190 244 188 320Z" fill="${p.fur}" ${sw}/>`);
+    P.push(`<path d="M100 186L104 140L130 164Z M180 186L176 140L150 164Z" fill="${p.fur}" ${sw}/><path d="M108 158L110 150L120 160Z M172 158L170 150L160 160Z" fill="#e8a5ae"/>`);
+    P.push(`<ellipse cx="140" cy="198" rx="46" ry="40" fill="${p.fur}" ${sw}/>`);
+    if(p.s==="tabby")P.push(`<path d="M128 162v14M140 160v16M152 162v14M98 200h12M170 200h12M110 270q10 6 0 14M170 270q-10 6 0 14" stroke="#9c5216" stroke-width="4" stroke-linecap="round" fill="none"/>`);
+    if(p.s==="calico")P.push(`<path d="M104 176q10-18 30-12q-6 18-26 22Z" fill="#e0893b"/><path d="M152 168q20-6 26 14q-14 6-26-2Z" fill="#2e2b29"/><path d="M100 270q20-10 30 10q-16 14-30 4Z" fill="#e0893b"/>`);
+    const eye=p.s==="plain"?"#e6c84a":"#141312";
+    P.push(`<ellipse cx="124" cy="196" rx="6" ry="8" fill="${eye}"/><ellipse cx="156" cy="196" rx="6" ry="8" fill="${eye}"/>${p.s==="plain"?`<ellipse cx="124" cy="196" rx="2" ry="6" fill="#141312"/><ellipse cx="156" cy="196" rx="2" ry="6" fill="#141312"/>`:""}<path d="M134 210h12l-6 6Z" fill="#e06b78"/><path d="M140 216q-6 8-12 4M140 216q6 8 12 4" fill="none" stroke="${p.s==="plain"?"#cfc6b6":ink}" stroke-width="2.5" stroke-linecap="round"/><path d="M96 208h22M96 216l22-2M184 208h-22M184 216l-22-2" stroke="${p.s==="plain"?"#cfc6b6":ink}" stroke-width="2" stroke-linecap="round"/>`);
+    P.push(`<ellipse cx="122" cy="314" rx="14" ry="9" fill="${p.fur}" ${sw}/><ellipse cx="158" cy="314" rx="14" ry="9" fill="${p.fur}" ${sw}/>`);
+  }
+  P.push(band);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" aria-hidden="true">${defs}${P.join("")}</svg>`;
+}
+function renderRoad(){
+  const r=$("#road");if(!r)return;
+  const items=[];const own=m=>joinedTs&&m.ts===joinedTs&&m.nick===st.nick;
+  if(!marchers.some(own))items.push({c:cfgOf(st),n:st.nick,me:true});
+  marchers.forEach(m=>items.push({c:cfgOf(m),n:m.nick||"",me:!!own(m)}));
+  if(!marchers.length)[...SAMPLE,...VARIETY.slice(0,9)].forEach(c=>items.push({c,n:L.roadSample}));
+  let html="";
+  items.forEach((it,i)=>{html+=`<figure role="listitem" class="${it.me?"me":""}">${avatarSVG({...it.c,bg:"none"},"rd"+i)}<figcaption>${it.me?L.roadMe+" · ":""}${esc(it.n)}</figcaption></figure>`;
+    if(i%5===4)html+=`<figure aria-hidden="true">${petSVG(PETS[(i/5|0)%PETS.length],"rp"+i)}<figcaption>&nbsp;</figcaption></figure>`;});
+  r.innerHTML=html;r.setAttribute("aria-label",`${L.roadTitle} (${items.length})`);
+}
+let joinedTs=null;
 function renderLane(){
   const real=marchers.map(cfgOf).slice(0,24);
   const seq=real.length>=16?real:[...real,...SAMPLE,...VARIETY].slice(0,Math.max(16,real.length));
-  const html=seq.map((c,i)=>avatarSVG(c,"l"+i)).join("");
-  $("#lane").innerHTML=html+html.replace(/(kf|cl)l(\d+)/g,"$1r$2");
+  let pi=0;const html=seq.map((c,i)=>avatarSVG(c,"l"+i)+((i%3===2)?petSVG(PETS[(pi++)%PETS.length],"l"+(1000+i)):"")).join("");
+  $("#lane").innerHTML=html+html.replace(/(kf|cl|pk)l(\d+)/g,"$1r$2");
   const n=marchers.length;
   $("#count").innerHTML=n?L.countN(n>=200?"200+":n):(loaded?L.countFirst:L.loading);
+  renderRoad();
 }
 (async()=>{
   if(!window.claude||!claude.use){loaded=true;renderLane();return;}
@@ -271,7 +327,7 @@ async function join(){
   if(!db||!uid){joinState="joinView";return null;}
   try{
     const ref=db.doc("marchers/"+uid);const prev=await ref.get();const pd=prev.exists?prev.data():null;
-    const data={nick:st.nick,mood:st.mood,skin:st.skin,hair:st.hair,hairc:st.hairc,shirt:st.shirt,scarf:st.scarf,hold:st.hold,pin:st.pin,slogan:st.slogan,ts:pd&&pd.ts?pd.ts:Date.now(),updated:Date.now()};
+    const data={nick:st.nick,face:st.face||"human",mood:st.mood,skin:st.skin,hair:st.hair,hairc:st.hairc,shirt:st.shirt,scarf:st.scarf,hold:st.hold,pin:st.pin,slogan:st.slogan,ts:pd&&pd.ts?pd.ts:Date.now(),updated:Date.now()};
     await ref.set(data);joinState="joinOk";return data.ts;
   }catch(e){joinState="joinPerm";return null;}
 }
@@ -284,11 +340,12 @@ function fillCert(){
   $("#certNo").textContent=certN?L.no(certN):"";
   $("#altText").value=L.alt(st,st.nick,L);
   $("#joinMsg").textContent=joinState?L[joinState]:"";
+  renderRoad();
 }
 $("#finish").onclick=async()=>{
   const btn=$("#finish");btn.disabled=true;
   joinState="";certN=0;$("#preview").style.display="none";fillCert();show("s-cert");
-  const ts=await join();
+  const ts=await join();joinedTs=ts;
   certN=ts?(marchers.filter(m=>m.ts<=ts).length||1):0;
   fillCert();btn.disabled=false;
 };
@@ -304,8 +361,8 @@ async function makePNG(){
   x.fillStyle="#141312";x.font="88px 'Black Han Sans', Impact, sans-serif";x.fillText(L.certTitle,72,150);
   x.font="500 34px 'IBM Plex Sans KR', sans-serif";x.fillStyle="#5d5850";x.fillText(L.pngSub,72,205);
   const img=new Image();
-  await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(avatarSVG(st,"p"));});
-  x.fillStyle="#141312";x.fillRect(70,250,940,780);x.drawImage(img,74,254,932,776);
+  await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(avatarSVG(st,"p").replace("<svg ","<svg width=\"1120\" height=\"1280\" "));});
+  const ah=776,aw=Math.round(ah*280/320),ax=Math.round((W-aw)/2);x.fillStyle="#141312";x.fillRect(ax-4,250,aw+8,ah+8);x.drawImage(img,ax,254,aw,ah);
   x.fillStyle="#141312";x.font="700 44px 'IBM Plex Sans KR', sans-serif";
   let y=1100;wrapText(x,L.pngLine(st.nick,L.date(new Date())),936).forEach(l=>{x.fillText(l,72,y);y+=58;});
   if(certN){x.font="40px 'Black Han Sans', Impact, sans-serif";x.fillText(L.no(certN),72,y+4);y+=58;}
